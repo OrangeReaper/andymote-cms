@@ -1,0 +1,588 @@
+---
+layout: default
+title: AndyMOTE Project
+---
+
+    <!-- MAIN CONTENT -->
+    <div class="container content">
+      <div class="row">
+        <div class="col-xl-4 offset-lg-1 spacer4">
+           <img src="assets/images/99_Activity.png"" class="img-fluid" alt="">
+        </div>
+        <div class="col-xl-6 offset-lg-1">
+          <!-- ICON -->
+          <div class="container-fluid">
+            {% include brand.html %}
+          </div>
+            <!-- DESCRIPTION -->
+            <div class="spacer2">
+              <h2 align="center"><i>Key Guide</i></h1>
+              <div id="description"> Choice of Key Name when you create your <a href="server.html#addremotes" target="_blank">LIRC Config files</a> is important for the best AndyMOTE experience; it is recommended that you use names selected from the table below (<a href="#keynames">Key Names</a>) whenever sensible to do so. </div>
+              <div id="description"> AndyMOTE uses the Key Name to determine which Icon to assign to the Remote Key and the default position for the Key on the Remote (See Table: <a href="#defaultlayout">Default Layout</a>). If AndyMOTE does not recognise the Key Name (ie it does not exist in the Key Name Table) then the Key will be placed at the bottom of the Remote and no Icon will be assigned.</div>
+              <div id="description"> Once a Remote has been created, any Key can be moved into any position you want on the Remote; you are also able to assign any Icon you like to the button (including your own icons). See the AndyMOTE <a target="_blank" href="userg.html">User Guide</a> for details on how to do this.</div>
+              <h3>Important</h3>
+              <p>For AndyMOTE to operate correctly the following LIRC nomenclature assigments are required where these keys exist on the Remote Control:</p>
+              <div class="col-lg-4 offset-lg-2">
+                <table id="keytable">
+                  <tr>
+                    <th>Device&nbspKey</th>
+                    <th>LIRC Nomenclature</th>
+                  </tr>
+                  <tr>
+                    <td>Volume Up</td>
+                    <td>KEY_VOLUMEUP</td>
+                  </tr>
+                  <tr>
+                    <td>Volume&nbspDown</td>
+                    <td>KEY_VOLUMEDOWN</td>
+                  </tr>
+                  <tr>
+                    <td>Mute</td>
+                    <td>KEY_MUTE</td>
+                  </tr>
+                  <tr>
+                    <td>Power Key</td>
+                    <td>KEY_POWER</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TABLES --> 
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 offset-lg-2">
+          <!-- KEY NAMES -->
+          <h2 class="page-title"> Key Names</h2>
+          <table id="keytable">
+            <tr>
+              <th>Icon</th>
+              <th>Key Name</th>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_power.png" width="32" height="32"></td>
+              <td>KEY_POWER</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_subtitle.png" width="32" height="32"></td>
+              <td>KEY_SUBTITLE</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_clear.png" width="32" height="32"></td>
+              <td>KEY_CLEAR</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_title.png" width="32" height="32"></td>
+              <td>KEY_TITLE</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_home.png" width="32" height="32"></td>
+              <td>KEY_HOME</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_1.png" width="32" height="32"></td>
+              <td>KEY_1</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_2.png" width="32" height="32"></td>
+              <td>KEY_2</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_3.png" width="32" height="32"></td>
+              <td>KEY_3</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_4.png" width="32" height="32"></td>
+              <td>KEY_4</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_5.png" width="32" height="32"></td>
+              <td>KEY_5</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_6.png" width="32" height="32"></td>
+              <td>KEY_6</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_7.png" width="32" height="32"></td>
+              <td>KEY_7</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_8.png" width="32" height="32"></td>
+              <td>KEY_8</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_9.png" width="32" height="32"></td>
+              <td>KEY_9</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_0.png" width="32" height="32"></td>
+              <td>KEY_0</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_eject.png" width="32" height="32"></td>
+              <td>KEY_EJECTCD</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_rew.png" width="32" height="32"></td>
+              <td>KEY_REWIND</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_play.png" width="32" height="32"></td>
+              <td>KEY_PLAY</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_ff.png" width="32" height="32"></td>
+              <td>KEY_FASTFORWARD</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_rec.png" width="32" height="32"></td>
+              <td>KEY_RECORD</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_prev.png" width="32" height="32"></td>
+              <td>KEY_PREVIOUS</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_stop.png" width="32" height="32"></td>
+              <td>KEY_STOP</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_pause.png" width="32" height="32"></td>
+              <td>KEY_PAUSE</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_next.png" width="32" height="32"></td>
+              <td>KEY_NEXT</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_shuffle.png" width="32" height="32"></td>
+              <td>KEY_SHUFFLE</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_channelup.png" width="32" height="32"></td>
+              <td>KEY_CHANNELUP</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_playpause.png" width="32" height="32"></td>
+              <td>KEY_PLAYPAUSE</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_up.png" width="32" height="32"></td>
+              <td>KEY_UP</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_mute.png" width="32" height="32"></td>
+              <td>KEY_MUTE</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_volumeup.png" width="32" height="32"></td>
+              <td>KEY_VOLUMEUP</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_channeldown.png" width="32" height="32"></td>
+              <td>KEY_CHANNELDOWN</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_left.png" width="32" height="32"></td>
+              <td>KEY_LEFT</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_ok.png" width="32" height="32"></td>
+              <td>KEY_OK</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_right.png" width="32" height="32"></td>
+              <td>KEY_RIGHT</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_volumedown.png" width="32" height="32"></td>
+              <td>KEY_VOLUMEDOWN</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_repeat.png" width="32" height="32"></td>
+              <td>KEY_MEDIA_REPEAT</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_back.png" width="32" height="32"></td>
+              <td>KEY_BACK</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_down.png" width="32" height="32"></td>
+              <td>KEY_DOWN</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_enter.png" width="32" height="32"></td>
+              <td>KEY_ENTER</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_refresh.png" width="32" height="32"></td>
+              <td>KEY_REFRESH</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_epg.png" width="32" height="32"></td>
+              <td>KEY_EPG</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_fav.png" width="32" height="32"></td>
+              <td>KEY_FAVORITES</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_channel.png" width="32" height="32"></td>
+              <td>KEY_CHANNEL</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_info.png" width="32" height="32"></td>
+              <td>KEY_INFO</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_pageup.png" width="32" height="32"></td>
+              <td>KEY_10CHANNELSUP</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_text.png" width="32" height="32"></td>
+              <td>KEY_TEXT</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_option.png" width="32" height="32"></td>
+              <td>KEY_OPTION</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_menu.png" width="32" height="32"></td>
+              <td>KEY_MENU</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_setup.png" width="32" height="32"></td>
+              <td>KEY_SETUP</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_pagedown.png" width="32" height="32"></td>
+              <td>KEY_10CHANNELSDOWN</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_tv.png" width="32" height="32"></td>
+              <td>KEY_TV</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_dvd.png" width="32" height="32"></td>
+              <td>KEY_DVD</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_aux.png" width="32" height="32"></td>
+              <td>KEY_AUX</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_audio.png" width="32" height="32"></td>
+              <td>KEY_AUDIO</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_tuner.png" width="32" height="32"></td>
+              <td>KEY_TUNER</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_cd.png" width="32" height="32"></td>
+              <td>KEY_CD</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_radio.png" width="32" height="32"></td>
+              <td>KEY_RADIO</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_sat2.png" width="32" height="32"></td>
+              <td>KEY_SAT2</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_sat.png" width="32" height="32"></td>
+              <td>KEY_SAT</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_video.png" width="32" height="32"></td>
+              <td>KEY_VIDEO</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_mp3.png" width="32" height="32"></td>
+              <td>KEY_MP3</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_tape.png" width="32" height="32"></td>
+              <td>KEY_TAPE</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_tv2.png" width="32" height="32"></td>
+              <td>KEY_TV2</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_pvr.png" width="32" height="32"></td>
+              <td>KEY_PVR</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_game.png" width="32" height="32"></td>
+              <td>KEY_GAMES</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_network.png" width="32" height="32"></td>
+              <td>KEY_F1</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_usb.png" width="32" height="32"></td>
+              <td>KEY_F2</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_adapter.png" width="32" height="32"></td>
+              <td>KEY_F3</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_inputplus.png" width="32" height="32"></td>
+              <td>KEY_F11</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_inputminus.png" width="32" height="32"></td>
+              <td>KEY_F12</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_inputplus.png" width="32" height="32"></td>
+              <td>KEY_F19</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_bluray.png" width="32" height="32"></td>
+              <td>KEY_F21</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_tools.png" width="32" height="32"></td>
+              <td>KEY_F14</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_dvr.png" width="32" height="32"></td>
+              <td>KEY_F23</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_sleep.png" width="32" height="32"></td>
+              <td>KEY_F22</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_auto.png" width="32" height="32"></td>
+              <td>KEY_F4</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_alc.png" width="32" height="32"></td>
+              <td>KEY_F5</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_adv.png" width="32" height="32"></td>
+              <td>KEY_F6</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_ctrl.png" width="32" height="32"></td>
+              <td>KEY_LEFTCTRL</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_disp.png" width="32" height="32"></td>
+              <td>KEY_F24</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_presetup.png" width="32" height="32"></td>
+              <td>KEY_F17</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_tuneup.png" width="32" height="32"></td>
+              <td>KEY_F15</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_end.png" width="32" height="32"></td>
+              <td>KEY_F10</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_bassup.png" width="32" height="32"></td>
+              <td>KEY_F13</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_trebup.png" width="32" height="32"></td>
+              <td>KEY_F7</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_presetdown.png" width="32" height="32"></td>
+              <td>KEY_F9</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_tunedown.png" width="32" height="32"></td>
+              <td>KEY_F18</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_band.png" width="32" height="32"></td>
+              <td>KEY_F16</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_bassdown.png" width="32" height="32"></td>
+              <td>KEY_F20</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_trebdown.png" width="32" height="32"></td>
+              <td>KEY_F8</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_red.png" width="32" height="32"></td>
+              <td>KEY_RED</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_green.png" width="32" height="32"></td>
+              <td>KEY_GREEN</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_yellow.png" width="32" height="32"></td>
+              <td>KEY_YELLOW</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_blue.png" width="32" height="32"></td>
+              <td>KEY_BLUE</td>
+            </tr>
+            <tr>
+              <td><img src="assets/icons/kic_x.png" width="32" height="32"></td>
+              <td>KEY_X</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="col-lg-4 offset-lg-2">
+          <!-- DEFAULT REMOTE LAYOUT -->
+          <h2 class="page-title"> Default Key Layout</h2>
+          <div class="row-fluid" id="corners">
+            <!-- REMOTE ROW 1 -->
+            <img src="assets/icons/kic_power.png" width="42" height="42">
+            <img src="assets/icons/kic_subtitle.png" width="42" height="42">
+            <img src="assets/icons/kic_clear.png" width="42" height="42">
+            <img src="assets/icons/kic_title.png" width="42" height="42">
+            <img src="assets/icons/kic_home.png" width="42" height="42">
+            <br>
+            <!-- REMOTE ROW 2 -->
+            <img src="assets/icons/kic_1.png" width="42" height="42">
+            <img src="assets/icons/kic_2.png" width="42" height="42">
+            <img src="assets/icons/kic_3.png" width="42" height="42">
+            <img src="assets/icons/kic_4.png" width="42" height="42">
+            <img src="assets/icons/kic_5.png" width="42" height="42">
+            <br>
+            <!-- REMOTE ROW 3 -->
+            <img src="assets/icons/kic_6.png" width="42" height="42">
+            <img src="assets/icons/kic_7.png" width="42" height="42">
+            <img src="assets/icons/kic_8.png" width="42" height="42">
+            <img src="assets/icons/kic_9.png" width="42" height="42">
+            <img src="assets/icons/kic_0.png" width="42" height="42">
+            <br>
+            <!-- REMOTE ROW 4 -->
+            <img src="assets/icons/kic_eject.png" width="42" height="42">
+            <img src="assets/icons/kic_rew.png" width="42" height="42">
+            <img src="assets/icons/kic_play.png" width="42" height="42">
+            <img src="assets/icons/kic_ff.png" width="42" height="42">
+            <img src="assets/icons/kic_rec.png" width="42" height="42">
+            <br>
+            <!-- REMOTE ROW 5 -->
+            <img src="assets/icons/kic_prev.png" width="42" height="42">
+            <img src="assets/icons/kic_stop.png" width="42" height="42">
+            <img src="assets/icons/kic_pause.png" width="42" height="42">
+            <img src="assets/icons/kic_next.png" width="42" height="42">
+            <img src="assets/icons/kic_shuffle.png" width="42" height="42">
+            <br>
+            <!-- REMOTE ROW 6 -->
+            <img src="assets/icons/kic_channelup.png" width="42" height="42">
+            <img src="assets/icons/kic_playpause.png" width="42" height="42">
+            <img src="assets/icons/kic_up.png" width="42" height="42">
+            <img src="assets/icons/kic_mute.png" width="42" height="42">
+            <img src="assets/icons/kic_volumeup.png" width="42" height="42">
+            <br>
+            <!-- REMOTE ROW 7 -->
+            <img src="assets/icons/kic_channeldown.png" width="42" height="42">
+            <img src="assets/icons/kic_left.png" width="42" height="42">
+            <img src="assets/icons/kic_ok.png" width="42" height="42">
+            <img src="assets/icons/kic_right.png" width="42" height="42">
+            <img src="assets/icons/kic_volumedown.png" width="42" height="42">
+            <br>
+            <!-- REMOTE ROW 8 -->
+            <img src="assets/icons/kic_repeat.png" width="42" height="42">
+            <img src="assets/icons/kic_back.png" width="42" height="42">
+            <img src="assets/icons/kic_down.png" width="42" height="42">
+            <img src="assets/icons/kic_enter.png" width="42" height="42">
+            <img src="assets/icons/kic_refresh.png" width="42" height="42">
+            <br>
+            <!-- REMOTE ROW 9 -->
+            <img src="assets/icons/kic_epg.png" width="42" height="42">
+            <img src="assets/icons/kic_fav.png" width="42" height="42">
+            <img src="assets/icons/kic_channel.png" width="42" height="42">
+            <img src="assets/icons/kic_info.png" width="42" height="42">
+            <img src="assets/icons/kic_pageup.png" width="42" height="42">
+            <br>
+            <!-- REMOTE ROW 10 -->
+            <img src="assets/icons/kic_text.png" width="42" height="42">
+            <img src="assets/icons/kic_option.png" width="42" height="42">
+            <img src="assets/icons/kic_menu.png" width="42" height="42">
+            <img src="assets/icons/kic_setup.png" width="42" height="42">
+            <img src="assets/icons/kic_pagedown.png" width="42" height="42">
+            <br>
+            <!-- REMOTE ROW 11 -->
+            <img src="assets/icons/kic_tv.png" width="42" height="42">
+            <img src="assets/icons/kic_dvd.png" width="42" height="42">
+            <img src="assets/icons/kic_aux.png" width="42" height="42">
+            <img src="assets/icons/kic_audio.png" width="42" height="42">
+            <img src="assets/icons/kic_tuner.png" width="42" height="42">
+            <br>
+            <!-- REMOTE ROW 12 -->
+            <img src="assets/icons/kic_cd.png" width="42" height="42">
+            <img src="assets/icons/kic_radio.png" width="42" height="42">
+            <img src="assets/icons/kic_sat2.png" width="42" height="42">
+            <img src="assets/icons/kic_sat.png" width="42" height="42">
+            <img src="assets/icons/kic_video.png" width="42" height="42">
+            <br>
+            <!-- REMOTE ROW 13 -->
+            <img src="assets/icons/kic_mp3.png" width="42" height="42">
+            <img src="assets/icons/kic_tape.png" width="42" height="42">
+            <img src="assets/icons/kic_tv2.png" width="42" height="42">
+            <img src="assets/icons/kic_pvr.png" width="42" height="42">
+            <img src="assets/icons/kic_game.png" width="42" height="42">
+            <br>
+            <!-- REMOTE ROW 14 -->
+            <img src="assets/icons/kic_network.png" width="42" height="42">
+            <img src="assets/icons/kic_usb.png" width="42" height="42">
+            <img src="assets/icons/kic_adapter.png" width="42" height="42">
+            <img src="assets/icons/kic_inputplus.png" width="42" height="42">
+            <img src="assets/icons/kic_inputminus.png" width="42" height="42">
+            <br>
+            <!-- REMOTE ROW 15 -->
+            <img src="assets/icons/kic_inputplus.png" width="42" height="42">
+            <img src="assets/icons/kic_bluray.png" width="42" height="42">
+            <img src="assets/icons/kic_tools.png" width="42" height="42">
+            <img src="assets/icons/kic_dvr.png" width="42" height="42">
+            <img src="assets/icons/kic_sleep.png" width="42" height="42">
+            <br>
+            <!-- REMOTE ROW 16 -->
+            <img src="assets/icons/kic_auto.png" width="42" height="42">
+            <img src="assets/icons/kic_alc.png" width="42" height="42">
+            <img src="assets/icons/kic_adv.png" width="42" height="42">
+            <img src="assets/icons/kic_ctrl.png" width="42" height="42">
+            <img src="assets/icons/kic_disp.png" width="42" height="42">
+            <br>
+            <!-- REMOTE ROW 17 -->
+            <img src="assets/icons/kic_presetup.png" width="42" height="42">
+            <img src="assets/icons/kic_tuneup.png" width="42" height="42">
+            <img src="assets/icons/kic_end.png" width="42" height="42">
+            <img src="assets/icons/kic_bassup.png" width="42" height="42">
+            <img src="assets/icons/kic_trebup.png" width="42" height="42">
+            <br>
+            <!-- REMOTE ROW 18 -->
+            <img src="assets/icons/kic_presetdown.png" width="42" height="42">
+            <img src="assets/icons/kic_tunedown.png" width="42" height="42">
+            <img src="assets/icons/kic_band.png" width="42" height="42">
+            <img src="assets/icons/kic_bassdown.png" width="42" height="42">
+            <img src="assets/icons/kic_trebdown.png" width="42" height="42">
+            <br>
+            <!-- REMOTE ROW 19 -->
+            <img src="assets/icons/kic_red.png" width="42" height="42">
+            <img src="assets/icons/kic_green.png" width="42" height="42">
+            <img src="assets/icons/kic_yellow.png" width="42" height="42">
+            <img src="assets/icons/kic_blue.png" width="42" height="42">
+            <img src="assets/icons/kic_x.png" width="42" height="42">
+          </div>
+        </div>
+      </div>
+    </div>

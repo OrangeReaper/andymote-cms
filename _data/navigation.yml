@@ -1,0 +1,15 @@
+- name: Home
+  link: /
+  icon: fa-home
+- name: Server
+  link: /server.html
+  icon: fa-server
+- name: User Guide
+  link: /userg.html
+  icon: fa-book-reader
+- name: Key Guide
+  link: /keyguide.html
+  icon: fa-table
+- name: GC Convert
+  link: /gcconvert.html
+  icon: fa-wrench
