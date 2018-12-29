@@ -33,39 +33,133 @@
 <div class="collapse navbar-collapse" id="navbarsExample04">
 <ul class="navbar-nav ml-auto">
   
-    <li class="nav-item">
-      <a class="nav-link" href="/"><i class="fas fa-home"></i>
-	Home
-      </a>
-    </li>
+    
+      <li class="nav-item">
+        <a class="nav-link" href="/"><i class="fas fa-home"></i> Home</a>
+      </li>
+    
   
-    <li class="nav-item">
-      <a class="nav-link" href="/server.html"><i class="fas fa-server"></i>
-	Server
-      </a>
-    </li>
+    
+      <li class="nav-item">
+        <a class="nav-link" href="/server.html"><i class="fas fa-server"></i> Server</a>
+      </li>
+    
   
-    <li class="nav-item">
-      <a class="nav-link" href="/userg.html"><i class="fas fa-book-reader"></i>
-	User Guide
-      </a>
-    </li>
+    
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-book-reader"></i> User Guide </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        
+          
+            <li class="nav-item"><a class="dropdown-item nav-link" href="/start.html">Getting Started</a></li>
+          
+        
+          
+            <li class="nav-item"><a class="dropdown-item nav-link" href="/main.html">Main Screen</a></li>
+          
+        
+          
+            <li class="nav-item"><a class="dropdown-item nav-link" href="/settings.html">Settings</a></li>
+          
+        
+          
+            <li class="nav-item"><a class="dropdown-item nav-link" href="/navigation.html">Navigation Menu</a></li>
+          
+        
+          
+
+            <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle nav-link" href="#">Devices</a>
+              <ul class="dropdown-menu">
+                
+                  <li><a class="dropdown-item nav-link" href="devices.html">Add Devices</a></li>
+                
+                  <li><a class="dropdown-item nav-link" href="editdevice.html">Edit Device</a></li>
+                
+                  <li><a class="dropdown-item nav-link" href="deviceremote.html">Device Remote</a></li>
+                
+              </ul>
+            </li>
+          
+            
+          
+        
+          
+
+            <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle nav-link" href="#">Activities</a>
+              <ul class="dropdown-menu">
+                
+                  <li><a class="dropdown-item nav-link" href="activities.html">Create Activies</a></li>
+                
+                  <li><a class="dropdown-item nav-link" href="editactivity.html">Edit Activities</a></li>
+                
+                  <li><a class="dropdown-item nav-link" href="activityremote.html">Activity Remotes</a></li>
+                
+              </ul>
+            </li>
+          
+            
+          
+        
+          
+
+            <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle nav-link" href="#">Customise</a>
+              <ul class="dropdown-menu">
+                
+                  <li><a class="dropdown-item nav-link" href="changeicon.html">Change Icons</a></li>
+                
+                  <li><a class="dropdown-item nav-link" href="customkey.html">Custom Keys</a></li>
+                
+                  <li><a class="dropdown-item nav-link" href="editkey.html">Edit Keys</a></li>
+                
+                  <li><a class="dropdown-item nav-link" href="keyseq.html">Key Sequences</a></li>
+                
+                  <li><a class="dropdown-item nav-link" href="createicon.html">Create Key Icons</a></li>
+                
+              </ul>
+            </li>
+          
+            
+          
+        
+        </ul>
+      </li>
+
+    
   
-    <li class="nav-item">
-      <a class="nav-link" href="/keyguide.html"><i class="fas fa-table"></i>
-	Key Guide
-      </a>
-    </li>
+    
+      <li class="nav-item">
+        <a class="nav-link" href="/keyguide.html"><i class="fas fa-table"></i> Key Guide</a>
+      </li>
+    
   
-    <li class="nav-item">
-      <a class="nav-link" href="/gcconvert.html"><i class="fas fa-wrench"></i>
-	GC Convert
-      </a>
-    </li>
+    
+      <li class="nav-item">
+        <a class="nav-link" href="/gcconvert.html"><i class="fas fa-wrench"></i> GC Convert</a>
+      </li>
+    
   
 </ul>
 </div>
 </nav>
+
+<script>
+$('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+  if (!$(this).next().hasClass('show')) {
+    $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+  }
+  var $subMenu = $(this).next(".dropdown-menu");
+  $subMenu.toggleClass('show');
+
+
+  $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+    $('.dropdown-submenu .show').removeClass("show");
+  });
+
+
+  return false;
+});
+
+</script>
 
     <article class="post">
 

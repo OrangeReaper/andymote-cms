@@ -7,12 +7,54 @@
 <div class="collapse navbar-collapse" id="navbarsExample04">
 <ul class="navbar-nav ml-auto">
   {% for item in site.data.navigation %}
-    <li class="nav-item">
-      <a class="nav-link" href="{{ item.link }}"><i class="fas {{item.icon}}"></i>
-	{{ item.name }}
-      </a>
-    </li>
+    {% if item.subcategories == null %}
+      <li class="nav-item">
+        <a class="nav-link" href="{{ item.link }}"><i class="fas {{item.icon}}"></i> {{ item.name }}</a>
+      </li>
+    {% else %}
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas {{item.icon}}"></i> {{ item.name }} </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        {% for subcategory in item.subcategories %}
+          {% if subcategory.articles == null %}
+            <li class="nav-item"><a class="dropdown-item nav-link" href="{{ subcategory.link }}">{{ subcategory.subtitle }}</a></li>
+          {% else %}
+
+            <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle nav-link" href="#">{{ subcategory.subtitle }}</a>
+              <ul class="dropdown-menu">
+                {% for article in subcategory.articles %}
+                  <li><a class="dropdown-item nav-link" href="{{ article.link }}">{{ article.article }}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+          
+            
+          {% endif %}
+        {% endfor %}
+        </ul>
+      </li>
+
+    {% endif %}
   {% endfor %}
 </ul>
 </div>
 </nav>
+
+<script>
+$('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+  if (!$(this).next().hasClass('show')) {
+    $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+  }
+  var $subMenu = $(this).next(".dropdown-menu");
+  $subMenu.toggleClass('show');
+
+
+  $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+    $('.dropdown-submenu .show').removeClass("show");
+  });
+
+
+  return false;
+});
+
+</script>

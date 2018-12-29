@@ -73,6 +73,33 @@ p.pt25 {
 }
 
 
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu a::after {
+  transform: rotate(-90deg);
+  position: absolute;
+  right: 6px;
+  top: .8em;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-left: .1rem;
+  margin-right: .1rem;
+}
+
+.dropdown-menu {
+  background-color: #333
+}
+
+.dropdown .dropdown-menu .dropdown-item, .dropdown .dropdown-menu .dropdown-item:hover{background-color: #333 !important;}
+
+
+
+
 /***** CAROUSEL *****/
 
   #myCarousel {
@@ -306,6 +333,7 @@ p.pt25 {
 .spacer6 {
         padding: 90px 0;
 }
+
 
 
 #copyright {
