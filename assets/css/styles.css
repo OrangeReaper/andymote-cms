@@ -34,6 +34,16 @@ h3 {
     text-rendering: optimizelegibility;
 }
 
+h4 {
+    font-size: 16px;
+    line-height: 18px;
+    margin: 0;
+    font-family: inherit;
+    font-weight: bold;
+    color: inherit;
+    text-rendering: optimizelegibility;
+}
+
 
 
 p.pt25 {
@@ -177,20 +187,12 @@ p.pt25 {
 	line-height: 1.7em;
 }
 
-#bullets li {
-        background: url('../../assets/images/bullet.png') no-repeat left;
-        list-style: none;
-        padding-left: 25px;
-        margin-left: -23px;
-        line-height: 1.7em;
+#bullets {
+        list-style-image: url('../../assets/images/bullet.png');
 }
 
-#bullet2 li {
-        background: url('../../assets/images/arrowright.png') no-repeat left;
-        list-style: none;
-        padding-left: 25px;
-        margin-left: -23px;
-        line-height: 1.7em;
+#bullet2 {
+        list-style-image: url('../../assets/images/arrowright.png');
 }
 
 #codeblock {
@@ -308,7 +310,7 @@ p.pt25 {
 .footer {
 	font-size: 0.85em;
 	line-height: 1.5em;
-	padding: 15px 0;
+	padding: 15px 15px 15px;
 	border-top: 1px solid #CCC;
 }
 
@@ -335,16 +337,7 @@ p.pt25 {
 }
 
 
-
-#copyright {
-	float:left;
-        padding-left: 5px;
-	}
 	
-#credits {
-	float:right;
-        padding-right: 5px;
-	}
 
 /***** SIDE NAV BASR FOR MANUAL ******/
 .sidenav {

@@ -1,0 +1,81 @@
+---
+layout: default
+title: AndyMOTE User Guide
+---
+    <div class="container content">
+      {% assign prev_page = "Edit Activities" %}
+      {% assign prev_href = "editactivity.html" %}
+      {% assign next_page = "Edit Custom Key" %}
+      {% assign next_href = "editcustomkey.html" %}
+      {% include usergnav.html %}
+      
+      <div class="row">
+        <div class="col-lg-7">
+          <h2 class="page-title">Activity Remote</h2>
+          <p>The Activity Remote screen opens when you click on an Activity Item in the <a href="navigation.html">Navigation Menu</a>. When first initiated the Activity will switch Devices into the required state (ON if needed, otherwise OFF); then the Activity startup <a href="keyseq.html">Key Sequence</a> will be transmitted if one has been set.</p>
+          <p>From here you can:</p>
+          <ul id="bullets">
+            <li>Press Keys to send the appropriate Infra-Red Command(s) to Devices,</li>
+            <li>Open the Navigation Menu and from here:</li>
+            <ul id="bullet2">
+              <li>Use a <a href="deviceremote.html">Device Remote</a></li>
+              <li>Edit a <a href="editdevice.html">Device</a></li>
+              <li>Edit a different <a href="editactivity.html">Activitys' settings</a></li>
+              <li>Change the running Activity</a></li>
+            </ul>
+            <li>Edit the remote layout* (Press <img src="assets/images/edit.png"> at top right of screen)</li>
+          </ul>
+          <p>*Edit Mode is described below.</p>
+          <p>An activity continues to run until you either:</p>
+          <ul id="bullets">
+            <li>Press the OFF button, or</li>
+            <li>Press the Back button, or</li>
+            <li>Switch to another Activity via the Navigation Menu, or</li>
+            <li>The App is forcefully terminated</li>
+          </ul>
+          <p>When transmission is in progress this is indicated by a <img src="assets/images/wifi.png"> icon at the top left of the remote.</p>
+        </div>
+        <div class="col-lg-5">
+          <div class="row spacer6 d-none d-lg-block"></div>
+          <p class="aligncenter"><img src="assets/images/99_Activity.png" class="img-fluid img80" id="settings" alt=""></p>
+        </div>
+      </div>
+
+      <!-- EDIT ACTIVITY REMOTE -- EDIT KEY OPTIONS -->
+      <div class="row">
+        <div class="col-lg-7 order-lg-12">
+          <h2 class="page-title">Edit Mode - Key Options</h2>
+          <p>In edit mode; if you click on a Key, a popup menu will appear offering up to four options:</p>
+          <h4>Move</h4>
+          <p>Moving Keys is undertaken by either exchanging the positions of two Keys or moving a Key into an empty position indicated by <img src="assets/images/nokey20.png">. Select the Move option then click on the destination position you want.</p>
+          <h4>Edit Key</h4>
+          <p>Select the Edit Key option to <a href="editcustomkey.html">Edit the Key</a>.</p>
+          <h4>Delete Key</h4>
+          <p>If the Key is a Custom Key you will be given the option to delete it.</p>
+          <h4>Insert Row Above</h4>
+          <p>To create space on the Remote select Insert Row. Note that AndyMOTE will automatically remove any completely empty rows when you finish editing.</p>
+          <div class="spacer"></div>
+          <p>When you have finished editing push the check <img src="assets/images/done20.png"> at the top right of the screen.</p>
+        </div>
+        <div class="col-lg-5">
+          <div class="row spacer2 d-none d-lg-block"></div>
+          <p class="aligncenter"><img src="assets/images/18_insertRow.png" class="img-fluid img80" id="settings" alt=""></p>
+        </div>
+      </div>
+
+      <!-- EDIT ACTIVITY REMOTE -- CREATE CUSTOM KEY -->
+      <div class="row">
+        <div class="col-lg-7">
+          <h2 class="page-title">Edit Mode - Create Custom Key</h2>
+          <p>In edit mode; if you click on an empty Key position, indicated by <img src="assets/images/nokey20.png">, a popup menu will appear and you have the option to <a href="customkey.html">Create a Key</a>. Select this option to create a Custom Key.</p>
+          <div class="spacer"></div>
+          <p>When you have finished editing push the check <img src="assets/images/done20.png"> at the top right of the screen.</p>
+        </div>
+        <div class="col-lg-5">
+          <div class="row spacer2 d-none d-lg-block"></div>
+          <p class="aligncenter"><img src="assets/images/19_createCustomKey.png" class="img-fluid img80" id="settings" alt=""></p>
+        </div>
+      </div>
+      {% include usergnav.html %}
+    </div>
+

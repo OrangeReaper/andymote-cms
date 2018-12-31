@@ -1,0 +1,26 @@
+---
+layout: default
+title: AndyMOTE User Guide
+---
+    <div class="container content">
+      {% assign prev_page = null %}
+      {% assign prev_href = null %}
+      {% assign next_page = "Main Screen" %}
+      {% assign next_href = "main.html" %}
+      {% include usergnav.html %}
+
+      <div class="row">
+        <div class="col-lg-7">
+            <h2 class="page-title">Getting Started</h2>
+            <p>The first time you run the AndyMOTE app you need to configure the server IP address in the App <a href="settings.html">Settings</a>.</p>
+            <p>Next, AndyMOTE needs to know about the Devices you want to control (ie, the remotes you <a href="server.html#addremotes">added to LIRC</a> when you setup the AndyMOTE <a href="server.html">Server</a>).</p>
+            <p>Once you have added your devices, you need to <a href="activities.html">create the activities</a> you wish to wish to use.</p>
+            <p>Finally, customise things the way you wish; <a href="movekey.html">change key positions</a>, <a href="changeicon.html">change icons</a>, <a href="customkey.html">add custom keys</a> etc...</p>
+        </div>
+        <div class="col-lg-5">
+          <div class="row spacer2 d-none d-lg-block"></div> 
+          <p class="aligncenter"><img src="assets/images/phones.png" class="img-fluid img80" id="phones" alt=""></p>
+        </div>
+      </div>
+      {% include usergnav.html %}
+    </div>

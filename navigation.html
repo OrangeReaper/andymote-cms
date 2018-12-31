@@ -1,0 +1,59 @@
+---
+layout: default
+title: AndyMOTE User Guide
+---
+    <div class="container content">
+      {% assign prev_page = "Settings" %}
+      {% assign prev_href = "settings.html" %}
+      {% assign next_page = "Add Devices" %}
+      {% assign next_href = "devices.html" %}
+      {% include usergnav.html %}
+
+      <div class="row">
+        <div class="col-lg-7">
+          <h2 class="page-title">Navigation Menu</h2>
+          <p>To view the Navigation Menu click on the menu icon (&#9776;) at the top left corner of the screen.</p>
+          <p>From here you can:</p>
+          <ul id="bullets">
+            <li>Use a <a href="deviceremote.html">Device Remote</a></li>
+            <li><a href="devices.html">Add a device</a></li>
+            <li><a href="editdevice.html">Edit (use <img src="assets/images/edit.png">) an existing device</a></li>
+            <li>Delete (use <img src="assets/images/trashcan20.png">) an existing device*</li>
+            <li><a href="activityremote.html">Run an activity</a></li>
+            <li><a href="activities.html">Add an activity</a></li>
+            <li><a href="editactivity.html">Edit (use <img src="assets/images/edit.png">) an existing activity</a></li>
+            <li>Delete (use <img src="assets/images/trashcan20.png">) an existing activity*</li>
+            <li>Option to set all devices off (visible if any device is switched on).</li>
+          </ul>
+          <p>*You cannot delete devices or activities when running an activity (see below).</p>
+          <p>When deleting a device, any Activity which uses the device will also be deleted (You will be prompted to confirm device deletion if activites will also be removed).</p>
+          <p>The text for devices which are currently switched on will be green.</p>
+          <p>The option to <i>Set All Devices Off</i> does not control any devices; this command merely changes the internally stored state for all devices to 'off' (see below).</p>
+          <p>You will not be able to <a href="activities.html">add a new activity</a> until you have added at least one device.</p>
+        </div>        
+        <div class="col-lg-5">
+          <div class="row spacer6 d-none d-lg-block"></div>
+          <p class="aligncenter"><img src="assets/images/27_navigation.png" class="img-fluid img80" id="settings" alt=""></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-7 order-lg-12">
+          <h2 class="page-title">Activity Running</h2>
+          <p>When an activity is running the options available in the Navigation Menu change as follows:</p>
+          <ul id="bullets">
+            <li>You cannot delete devices or activities.</li>
+            <li>You cannot edit the activity that is running.</li>
+          </ul>
+          <p>When deleting a device, any Activity which uses the device will also be deleted (You will be prompted to confirm device deletion if activites will also be removed).</p>
+
+          <h2 class="page-title" id="deviceonoff">Device On/Off States</h2>
+          <p>Note: Devices which are on the 'On' state are highlighted as green in the Navigation Menu</p>
+          <p>Because infra-red is a one-way control system (ie there is no feedback from devices) AndyMOTE must make assumptions regarding the on/off state of any device in your system. From time these assumptions will be incorrect, so AndyMOTE provides facilities for you to change the On/Off state of a device being controlled. The <i>Set All Devices OFF</i> control is one such facility. You can also change the state of any individual device from the <a href="editdevice.html">Edit Device</a> screen.</p>
+        </div>
+        <div class="col-lg-5">
+          <div class="row spacer6 d-none d-lg-block"></div>
+          <p class="aligncenter"><img src="assets/images/28_navigation.png" class="img-fluid img80" id="settings" alt=""></p>
+        </div>
+      </div>
+      {% include usergnav.html %}
+    </div>

@@ -3,21 +3,21 @@
   icon: fa-home
 
 - name: Server
-  link: /server.html
+  link: server.html
   icon: fa-server
 
 - name: User Guide
-  link: /userg.html
+  link: userg.html
   icon: fa-book-reader
   subcategories:
     - subtitle: "Getting Started"
-      link: /start.html
+      link: start.html
     - subtitle: "Main Screen"
-      link: /main.html
+      link: main.html
     - subtitle: "Settings"
-      link: /settings.html
+      link: settings.html
     - subtitle: "Navigation Menu"
-      link: /navigation.html
+      link: navigation.html
     - subtitle: "Devices"
       articles:
       - article: "Add Devices"
@@ -26,31 +26,33 @@
         link: "editdevice.html"
       - article: "Device Remote"
         link: "deviceremote.html"
+      - article: "Edit Device Key"
+        link: "editdevicekey.html"
     - subtitle: "Activities"
       articles:
       - article: "Create Activies"
         link: "activities.html"
-      - article: "Edit Activities"
+      - article: "Edit Activity"
         link: "editactivity.html"
       - article: "Activity Remotes"
         link: "activityremote.html"
+      - article: "Edit Custom Key"
+        link: "editcustomkey.html"
     - subtitle: "Customise"
       articles:
       - article: "Change Icons"
         link: "changeicon.html"
       - article: "Custom Keys"
         link: "customkey.html"
-      - article: "Edit Keys"
-        link: "editkey.html"
       - article: "Key Sequences"
         link: "keyseq.html"
       - article: "Create Key Icons"
         link: "createicon.html"
 
 - name: Key Guide
-  link: /keyguide.html
+  link: keyguide.html
   icon: fa-table
 
 - name: GC Convert
-  link: /gcconvert.html
+  link: gcconvert.html
   icon: fa-wrench

@@ -1,0 +1,37 @@
+---
+layout: default
+title: AndyMOTE User Guide
+---
+    <div class="container content">
+      {% assign prev_page = "Add Devices" %}
+      {% assign prev_href = "devices.html" %}
+      {% assign next_page = "Device Remotes" %}
+      {% assign next_href = "deviceremote.html" %}
+      {% include usergnav.html %}
+
+      <div class="row">
+        <div class="col-lg-7">
+          <h2 class="page-title">Edit Device</h2>
+          <p>To edit a Device press the <img src="assets/images/edit.png"> button to the right of the required item on the <a href="navigation.html">Navigation Menu</a>; this will open a screen similar to that shown in the figure.</p>
+          <p>Here you can:</p>
+          <ul id="bullets">
+            <li>Change the name of the Device,</li>
+            <li>Change or remove the icon that should be displayed in the <a href="navigation.html">Navigation Menu</a>,</li>
+            <li>Set the On/Off state of the Device.</li>
+            <li>Change the Default <a href="devices.html#transmitduration">Transmit Duration</a> of Keys for this remote.</li>
+          </ul>
+          <p>Notes:</p>
+          <ol>
+            <li>Changing the Device On/Off state does not control any devices; this command merely changes the internally stored state for the Device (see <a href="navigation.html#deviceonoff">Device On/Off States</a>)</li>
+            <li>Changing the Default Transmit Duration will modify this setting for every key on the remote (even those you may have changed manually)</li>
+           </ol> 
+          <p>Once you have completed your modifications, press the <i>Done</i> button.</p>
+          <p>Pushing the <i>Back</i> button at any time will cancel the operation.</p>
+        </div>
+        <div class="col-lg-5">
+          <div class="row spacer6 d-none d-lg-block"></div>
+          <p class="aligncenter"><img src="assets/images/30_editDevice.png" class="img-fluid img80" id="settings" alt=""></p>
+        </div>
+      </div>
+      {% include usergnav.html %}
+    </div>
