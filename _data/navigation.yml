@@ -56,3 +56,7 @@
 - name: GC Convert
   link: gcconvert.html
   icon: fa-wrench
+
+- name: Contact
+  link: contact.html
+  icon: fa-comments
