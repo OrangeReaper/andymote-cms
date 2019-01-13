@@ -44,7 +44,10 @@ h4 {
     text-rendering: optimizelegibility;
 }
 
-
+.app_icon {
+	height: 76px;
+	width: 76px;
+}
 
 p.pt25 {
         padding-top: 25px;

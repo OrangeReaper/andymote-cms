@@ -52,15 +52,20 @@ title: AndyMOTE Server
          <h2 class="page-title">Before You Start</h2>
          <p><b>You will need a Monitor, a Keyboard and cables capable of connecting these items to your Raspberry Pi</b></p>
          <p><a target="_blank" href="https://www.raspberrypi.org/downloads/raspbian/">Download</a> and <a target="_blank" href="https://www.raspberrypi.org/documentation/installation/installing-images/"> install </a>Raspian <b><i>Lite</b></i> to your SD Card</p>
-         <p>Once Raspian Lite is installed on your SD Card and before you move the card to your Raspberry Pi; mount the card on your PC and make the following edits to file <i>/boot/config.txt</i><!--/li--></p>
+         <p>Once Raspian Lite is installed on your SD Card and before you move the card to your Raspberry Pi; mount the card on your PC. Create an empty file <i>/boot/ssh</i> (this enables SHH on the server) and make the following edits to file <i>/boot/config.txt</i></p>
        </div>
        <div class="col-lg-6">
         <div class="row-fluid" id="codeblock">
+          # Set HDMI to Normal output<br>
           hdmi_drive=2<br>
+          # Set HDMI to DMT Mode (sutable for Monitors)<br>
           hdmi_group=2<br>
+          # Set Resolution to 800x600 @ 60hz<br>
           hdmi_mode=9<br>
           dtoverlay=lirc-rpi,gpio_in_pin=18,gpio_out_pin=17
-        </div>      
+        </div>
+        <div class="spacer"></div>
+        <p>For guidance on hdmi settings please visit <a href="https://www.raspberrypi.org/documentation/configuration/config-txt/video.md" target="_blank">here</a>.</p>      
        </div>
      </div>
    </div>
@@ -139,6 +144,7 @@ title: AndyMOTE Server
        <div class="col-lg-12">
          <br>
          <p>Change <i>192.168.1.1</i> to the actual address of your router and <i>192.168.1.116</i> to the actual static address you require for your application.</p>
+         <p>* You may wish to run the raspi-config utility and make any configuration changes at this point.</p>
          <p>Reboot when done.</p>
        </div>
      </div>
@@ -161,8 +167,17 @@ title: AndyMOTE Server
        </div>
        <div class="col-lg-12">
          <br>
-         <p>Edit the <i>/etc/modules</i> file and add the lines:</p>
+         <p>Edit the <i>/etc/modules</i> file; eg:</p>
        </div>
+        <div class="col-lg-6">
+         <div class="row-fluid" id="codeblock">
+           $ sudo nano /etc/modules
+         </div>
+       </div>
+       <div class="col-lg-12">
+          <br>
+          <p>and add the lines:</p>
+        </div>
        <div class="col-lg-6">
          <div class="row-fluid" id="codeblock">
            lirc_dev<br>
@@ -186,7 +201,16 @@ title: AndyMOTE Server
      <div class="row">
        <div class="col-lg-12">
          <h2 class="page-title">LIRC Configuration</h2>
-         <p>Edit the <i>/etc/lirc/hardware.conf</i> file and make it look like this:</p>
+         <p>Edit the <i>/etc/lirc/hardware.conf</i> file, eg:</p>
+       </div>
+        <div class="col-lg-6">
+         <div class="row-fluid" id="codeblock">
+           $ sudo nano /etc/lirc/hardware.conf
+         </div>
+       </div>
+       <div class="col-lg-12">
+         <br>
+         <p>and make it look like this:</p>
        </div>
        <div class="col-lg-6">
          <div class="row-fluid" id="codeblock">
@@ -339,10 +363,11 @@ title: AndyMOTE Server
          </div>
        </div>
        <div class="col-lg-12">
-         <p style="padding-top:10px"> Next, goto your home directory & clone the andymoteserver repository</p>
+         <p style="padding-top:10px"> Next, install git, goto your home directory & clone the andymoteserver repository</p>
        </div>
        <div class="col-lg-6">
          <div class="row-fluid" id="codeblock">
+           $ sudo apt install git<br>
            $ cd ~<br>
            $ git clone https://github.com/orangereaper/andymoteserver<br>
          </div>
@@ -399,8 +424,8 @@ title: AndyMOTE Server
        </div>
        <div class="col-lg-6">
          <div class="row-fluid" id="codeblock">
-           $ systemctl enable andymote<br>
-           $ systemctl start andymote<br>
+           $ sudo systemctl enable andymote<br>
+           $ sudo systemctl start andymote<br>
          </div>
        </div>
      </div>
