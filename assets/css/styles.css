@@ -298,15 +298,12 @@ p.pt25 {
 /***** CONTACT *****/
 
 #contact-form {
-	border-left: 1px solid #cccccc;
-	}
+    position: relative;
+	overflow:hidden;
+    height: 700px;
+    width: 100%; 
+}
 	
-#contact-info {
-	padding-bottom:20px;
-	}
-	
-.form-sec{background:#ccc; padding:15px;
-    background: #f8f9fa;padding: 15px;box-shadow: 0 0 4px #ccc;}	
 	
 /***** FOOTER *****/
 
