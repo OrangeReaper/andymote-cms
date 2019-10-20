@@ -5,6 +5,11 @@
 - name: Server
   link: server.html
   icon: fa-server
+  subcategories:
+    - subtitle: "Pi Zero"
+      link: server.html
+    - subtitle: "Pi3"
+      link: server_pi3.html
 
 - name: User Guide
   link: userg.html

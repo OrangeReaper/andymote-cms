@@ -1,0 +1,27 @@
+  
+   <!-- FIX IP ADDRESS -->
+   <div class="container">
+     <div class="row">
+       <div class="col-lg-12">
+         <h2 class="page-title" id="ethsetup">Set-up Static Ethernet IP Address</h2>
+		 <p>(Not applicable to Raspberry Pi Zero or Raspbery Pi Model A)
+         <p>It's recommended that your server has a fixed IP Address and that your Andymote System uses Ethernet rather than WiFi if possible.</p>
+         <p>You may be able to achieve a static ip address by configuring your DHCP server appropriately or, to set the eth0 interface to a static address on the Raspberry Pi, edit the file /etc/dhcpcd.conf and include the lines .</p>
+       </div>
+       <div class="col-lg-6">
+         <div class="row-fluid" id="codeblock">
+		   # Example static IP configuration:<br>
+			interface eth0<br>
+			static ip_address=192.168.1.110/24<br>
+			#static ip6_address=fd51:42f8:caae:d92e::ff/64<br>
+			static routers=192.168.1.1<br>
+			static domain_name_servers=192.168.1.1 8.8.8.8<br>		   
+         </div>
+       </div>
+       <div class="col-lg-12">
+         <br>
+         <p>Change <i>192.168.1.1</i> to the actual address of your router and <i>192.168.1.110</i> to the actual static address you require for your application.</p>
+         <p>Reboot when done.</p>
+       </div>
+     </div>
+   </div>

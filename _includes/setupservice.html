@@ -1,0 +1,29 @@
+       <div class="col-lg-12">
+         <p style="padding-top:10px">Finally, to run AndyMOTE Server as a service, <br> create the file <i> /lib/systemd/system/andymote.service </i> with content as shown below:</p>
+       </div>
+       <div class="col-lg-6">
+         <div class="row-fluid" id="codeblock">
+           [Unit]<br>
+           Description=run AndyMOTE Server as a service<br>
+           <br>
+           [Service]<br>
+           Type=simple<br>
+           RemainAfterExit=false<br>
+           Restart=always<br>
+           RestartSec=30<br>
+           ExecStop=/bin/true<br>
+           ExecStart=/opt/andymoteserver/andymote<br>
+           <br>
+           [Install]<br>
+           WantedBy=multi-user.target<br>
+         </div>
+       </div>
+       <div class="col-lg-12">
+         <p style="padding-top:10px">Enable and start the service</p>
+       </div>
+       <div class="col-lg-6">
+         <div class="row-fluid" id="codeblock">
+           $ sudo systemctl enable andymote<br>
+           $ sudo systemctl start andymote<br>
+         </div>
+       </div>

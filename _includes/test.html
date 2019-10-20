@@ -1,0 +1,38 @@
+   <div class="container">
+     <div class="row">
+       <div class="col-lg-12">
+         <h2 class="page-title">Testing the IR Receiver</h2>
+         <p>Enter the following sequence of commands to stop the LIRC Daemon and test the receiver.</p>
+       </div>
+       <div class="col-lg-6">
+         <div class="row-fluid" id="codeblock">
+           $ sudo systemctl stop lircd<br>
+           $ sudo mode2 --device /dev/lirc1<br>
+         </div>
+       </div>
+       <div class="col-lg-12">
+         <br>
+         <p>The mode2 program will output the mark-space ratio of an IR Signal to the console. Point a remote control at your IR receiver and press some buttons. You should see something like this: </p>
+       </div>
+       <div class="col-lg-6">
+         <div class="row-fluid" id="codeblock">
+           space 16300<br>
+           pulse 95<br>
+           space 28794<br>
+           pulse 80<br>
+           space 19395<br>
+           pulse 83<br>
+           space 402351<br>
+         </div>
+       </div>
+       <div class="col-lg-12">
+         <br>
+         <p>when you are done press ctl-c and restart the LIRC Daemon using the following command.</p>
+       </div>
+       <div class="col-lg-6">
+         <div class="row-fluid" id="codeblock">
+           $ sudo systemctl start lircd<br>
+         </div>
+       </div>
+     </div>
+   </div>

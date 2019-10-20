@@ -1,0 +1,67 @@
+   <div class="container">
+     <div class="row">
+       <div class="col-lg-12">
+         <h2 class="page-title">Set-up WiFi Network</h2>
+		 <p>It is recommended that your connection to your Andymote Server uses Ethernet rather than WiFi if possible.</p>
+		<p>If you do not require WiFi you can skip this step.</p>
+         <p>First, Open the wpa-supplicant configuration file using your favorite editor (eg nano).</p>
+       </div>
+       <div class="col-lg-6">
+         <div class="row-fluid" id="codeblock">
+           $ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf<br>
+         </div>
+       </div>
+       <div class="col-lg-12">
+         <br>
+         <p>Goto the end of the file and add your network (eg).</p>
+       </div>
+       <div class="col-lg-6">
+         <div class="row-fluid" id="codeblock">
+           network={<br>
+           &nbsp&nbspssid="YOUR_SSID"<br>
+           &nbsp&nbsppsk="YOUR_KEY"<br>
+           &nbsp&nbsppriority="1"<br>
+           &nbsp&nbspid_str="YOUR_SSID_NAME"<br>
+           }<br>
+         </div>
+       </div>
+       <div class="col-lg-12">
+         <br>
+         <p>Replace YOUR_SSID, YOUR_KEY and YOUR_SSID_NAME as appropriate for your network.</p>
+         <p>Save the file, restart the WPA supplicant and reboot.</p>
+       </div>
+       <div class="col-lg-6">
+         <div class="row-fluid" id="codeblock">
+           $ wpa_cli -i wlan0 reconfigure<br>
+           $ sudo reboot
+         </div>
+       </div>
+     </div>
+   </div>
+   
+   <!-- FIX IP ADDRESS -->
+   <div class="container">
+     <div class="row">
+       <div class="col-lg-12">
+         <h2 class="page-title">Set-up Static Wifi IP Address</h2>
+		 <p>If you do not require WiFi you can skip this step.</p>
+         <p>It's recommended that your server has a fixed IP Address.</p>
+         <p>You may be able to achieve this by configuring your DHCP server appropriately or, to set the wlan0 interface to a static address on the Raspberry Pi, edit the file /etc/dhcpcd.conf and include the lines .</p>
+       </div>
+       <div class="col-lg-6">
+         <div class="row-fluid" id="codeblock">
+           # Example static IP configuration:<br>
+           interface wlan0<br>
+           static ip_address=192.168.1.116/24<br>
+           static routers=192.168.1.1<br>
+           static domain_name_servers=192.168.1.1 8.8.8.8<br>
+         </div>
+       </div>
+       <div class="col-lg-12">
+         <br>
+         <p>Change <i>192.168.1.1</i> to the actual address of your router and <i>192.168.1.116</i> to the actual static address you require for your application.</p>
+         <p>* You may wish to run the raspi-config utility and make any configuration changes at this point.</p>
+         <p>Reboot when done.</p>
+       </div>
+     </div>
+   </div>

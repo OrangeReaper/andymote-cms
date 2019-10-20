@@ -1,0 +1,56 @@
+---
+layout: default
+title: Legacy Server
+---
+   <div class="container">
+     <div class="row">
+       <div class="col-lg-12">
+         <h2 class="page-title">Install AndyMOTE Legacy Server</h2>
+         <p>Install Libraries liblirc and libboost as described below:</p>
+       </div>
+       <div class="col-lg-6">
+         <div class="row-fluid" id="codeblock">
+           $ sudo apt-get update<br>
+           $ sudo apt-get install liblirc-dev libboost-all-dev<br>
+         </div>
+       </div>
+       <div class="col-lg-12">
+         <p style="padding-top:10px"> Next, install git, goto your home directory & clone the andymoteserver repository</p>
+       </div>
+       <div class="col-lg-6">
+         <div class="row-fluid" id="codeblock">
+           $ sudo apt install git<br>
+           $ cd ~<br>
+           $ git clone https://github.com/orangereaper/andymoteserver<br>
+         </div>
+       </div>
+       <div class="col-lg-12">
+         <p style="padding-top:10px">then compile the source</p>
+       </div>
+       <div class="col-lg-6">
+         <div class="row-fluid" id="codeblock">
+           $ cd andymoteserver<br>
+           $ make<br>
+         </div>
+       </div>
+       <div class="col-lg-12">
+         <p style="padding-top:10px">Move the resulting file to a convenient location; eg:</p>
+       </div>
+       <div class="col-lg-6">
+         <div class="row-fluid" id="codeblock">
+           $ sudo mkdir -p /opt/andymoteserver<br>
+           $ sudo mv dist/Debug/GNU-Linux/andymote /opt/andymoteserver/<br>
+         </div>
+       </div>
+       <div class="col-lg-12">
+         <p style="padding-top:10px">Tidy up</p>
+       </div>
+       <div class="col-lg-6">
+         <div class="row-fluid" id="codeblock">
+           $ cd ~<br>
+           $ rm -Rf andymoteserver<br>
+         </div>
+       </div>
+	   {% include setupservice.html %}
+	  </div>
+    </div>

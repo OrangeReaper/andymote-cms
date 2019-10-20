@@ -1,0 +1,51 @@
+  <div class="container" id="addremotes">
+     <div class="row">
+       <div class="col-lg-12">
+         <h2 class="page-title">Add Remotes</h2>
+         <p>LIRC uses configuration files that contain data relating to each remote control that can be emulated by LIRC. You must generate or otherwise provide these configuration files in order for the LIRC subsystem to work as desired.</p>  
+         <h3>Important</h3>
+         <ul id="bullets">
+           <li>You must provide an individual config file for each remote to be emulated.</li>
+           <li>The config files must be stored in directory <i>/etc/lirc/lircd.conf.d</i>.</li>
+           <li>Choice of Key Name is important for the best AndyMOTE experience, when selecting names for your keys, please follow the guidelines <a target="_blank" href="keyguide.html">here</a>.</li>
+         </ul>
+         <p>Config files can be downloaded from <a target="_blank" href="http://lirc.sourceforge.net/remotes/">here</a> but beware that, if you use them, they must contain only <i>one</i> remote configuration. (Config files are simple text files and can be easily edited if necessary.</p>
+		 <p>When you have finished adding your .conf files rename the devinput.lircd.conf file thus:</p>
+		 <div class="col-lg-6">
+			<div class="row-fluid" id="codeblock">
+				$ sudo mv devinput.lircd.conf devinput.lircd.conf.dist
+			</div>	
+		</div>
+		<div class="spacer"></div>
+         <h2>Method 1</h2>
+         <p>You can create your own config files, using the original remote control, quite simply using the following commands:</p>
+       </div>
+       <div class="col-lg-6">
+         <div class="row-fluid" id="codeblock">
+           $ sudo systemctl stop lircd<br>
+           $ sudo irrecord -n ~/FILENAME.conf
+           <br>
+           <i>-- OR --</i>
+           <br>
+           $ sudo irrecord -f -n ~/FILENAME.conf
+         </div>
+       </div>
+       <div class="col-lg-12">
+         <br>
+        <p>Replace FILENAME with some discriptive name for the remote control you are configuring. The latter command creates a 'raw' file and this is sometimes needed depending on the characteristics of remote control you are using. The -n switch allows you to you to use any keyname you like (rather than be limited to the LIRC Namespace list).</p>
+        <p>Remember to restart lircd and reboot when you are done.</p>
+       </div>
+       <div class="col-lg-6">
+         <div class="row-fluid" id="codeblock">
+           $ sudo systemctl start lircd<br>
+           $ sudo reboot<br>
+         </div>
+       </div>
+       <div class="col-lg-12">
+         <br>
+         <h2>Method 2</h2>
+         <p><a target="_blank" href="https://irdb.globalcache.com/">Global-cache</a> maintain a cloud based database of over 200,000 IR Codes. Anyone can register and download up to 5 codesets per day.</p>
+         <p>These codesets can be converted to LIRC conf files, in an AndyMOTE friendly way, using the gcConvert application described <a target="_blank" href="gcconvert.html">here</a>.</p>
+       </div>
+     </div>
+   </div>
