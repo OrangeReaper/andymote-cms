@@ -3,8 +3,8 @@ layout: default
 title: AndyMOTE User Guide
 ---
     <div class="container content">
-      {% assign prev_page = "Add Devices" %}
-      {% assign prev_href = "devices.html" %}
+      {% assign prev_page = "Add Kodi Device" %}
+      {% assign prev_href = "kodidevices.html" %}
       {% assign next_page = "Device Remotes" %}
       {% assign next_href = "deviceremote.html" %}
       {% include usergnav.html %}
@@ -33,5 +33,26 @@ title: AndyMOTE User Guide
           <p class="aligncenter"><img src="assets/images/30_editDevice.png" class="img-fluid img80" id="settings" alt=""></p>
         </div>
       </div>
+	  
+	        <!-- EDIT KODI DEVICE -->
+      <div class="row">
+        <div class="col-lg-7 order-lg-12">
+          <h2 class="page-title">Edit Kodi Device</h2>
+          <p>If the device you have chosen to edit is a Kodi Device then you will see an additional option to change the IP address of your kodi device and the option to <i>Change the Default Transmit Period</i> is not there (not required).</p>
+          <p>Push the Test Button to check the connection between the App and your Kodi Device. A green banner will appear on the screen if successful. If a red banner appears then no connection could be made; in this case check that:</p>
+			<ul>
+				<li>the Kodi Device is up, running and <a href="kodidevices.html#config">configured correctly</a>, 
+				<li>the IP address is set correctly, </li>
+				<li>the wifi on your Mobile/Tablet is turned on, and</li>
+				<li>you are connected to the same local network as the Kodi Device. </li>
+			</ul>
+        </div>
+        <div class="col-lg-5">
+          <div class="row spacer2 d-none d-lg-block"></div>
+          <p class="aligncenter"><img src="assets/images/editkodidevice.png" class="img-fluid img80" id="settings" alt=""></p>
+        </div>
+      </div>
+	  
+	  
       {% include usergnav.html %}
     </div>

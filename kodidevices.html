@@ -1,0 +1,37 @@
+---
+layout: default
+title: AndyMOTE User Guide
+---
+    <div class="container content">
+      {% assign prev_page = "Add Device" %}
+      {% assign prev_href = "devices.html" %}
+      {% assign next_page = "Edit Devices" %}
+      {% assign next_href = "editdevice.html" %}
+      {% include usergnav.html %}
+
+      <div class="row">
+        <div class="col-lg-7">
+          <h2 class="page-title">Add Kodi Device</h2>
+          <p>AndyMOTE can directly interface with Kodi Devices.</p>
+          <p>You can add a Kodi device to AndyMOTE in the  <a href="devices.html">Add Device</a> view.</p>
+          <p>In the <i>pre-configuration</i> dropdown; select <i>Kodi</i>. if you do this then the <a href="devices.html">Add Device</a> view Device name and icon will change, and the <i>Transmit Duration</i> and <i>Select Remote</i> views will disappear, to be replaced with the option to enter the IP Address of the Kodi Device you wish to add. You can enter your own name for the Kodi Device and/or <a href="changeicon.html">select the icon</a> you want to use by pressing the <i>Change Icon</i> button.</p>          
+          <p>Once you have populated all the required fields in this view, a <i>Done</i> button will appear. Press this to complete the process.</p>
+          <p>Pushing the <i>Back</i> button at any time will cancel the operation.</p>
+		  <h2 id="config">Kodi Configuration</h4>
+		  <p>In order for AndyMOTE to work with your Kodi device the latter must be configured as described below:
+		  <h3> In Kodi v17 and above:</h3>
+			<ul>
+			  <li>Go to Settings->Services->Control;</li>
+			  <li>Enable the setting Allow remote control via HTTP;</li>
+			  <li>Ensure the Port number is set to 8080;</li>
+			  <li>Ensure that the Username and the Password are empty;</li>
+			  <li>Enable <b>Allow remote control from applications on this system</b></li>
+			</ul>
+        </div>
+        <div class="col-lg-5">
+          <div class="row spacer6 d-none d-lg-block"></div>
+          <p class="aligncenter"><img src="assets/images/addkodidevice.png" class="img-fluid img80" id="settings" alt=""></p>
+        </div>
+      </div>
+      {% include usergnav.html %}
+    </div>
