@@ -50,6 +50,8 @@
         link: "keyseq.html"
       - article: "Create Key Icons"
         link: "createicon.html"
+    - subtitle: "MQTT Support"
+      link: mqtt.html
 
 - name: Key Guide
   link: keyguide.html
