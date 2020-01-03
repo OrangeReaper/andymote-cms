@@ -13,7 +13,7 @@ title: AndyMOTE User Guide
         <div class="col-lg-7">
           <h2 class="page-title">MQTT Support</h2>
           <p>MQTT allows AndyMOTE to publish it's current activity state to other systems (for example <a href="https://www.home-assistant.io">Home Assistant</a>). Andymote requires that the <a href="server.html">AndyMOTE Server</a> has a MQTT Broker such as <a href="https://mosquitto.org">Mosquitto</a> installed.</p>
-		  <p>With the <a href="server.html">AndyMOTE Server</a> properly configured, AndyMOTE will publish the current activity state to the the <a href="server.html">AndyMOTE Server</a> MQTT Broker. For example if AndyMOTE has an <a href="activities.html">Activity</a> called <i>Watch BluRay</i> and this is activated; AndyMOTE will publish status of <i>Watch BluRay</i> to the MQTT Broker. If no activities are running then the published status will be set to <i>Off</i>.
+		  <p>With the <a href="server.html">AndyMOTE Server</a> properly configured, AndyMOTE will publish the current activity state to the the <a href="server.html">AndyMOTE Server</a> MQTT Broker. For example if AndyMOTE has an <a href="activities.html">Activity</a> called <i>Watch BluRay</i> and this is activated; AndyMOTE will publish status of <i><b>andymote = Watch BluRay</b></i> to the MQTT Broker. If no activities are running then the published status will be set to <i>Off</i>.
          </div> 
       </div>
       {% include usergnav.html %}
