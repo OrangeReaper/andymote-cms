@@ -57,7 +57,8 @@ title: AndyMOTE Server
 			  hdmi_group=2<br>
 			  # Set Resolution to 800x600 @ 60hz<br>
 			  hdmi_mode=9<br>
-			  dtoverlay=lirc-rpi,gpio_in_pin=18,gpio_out_pin=17
+			  dtoverlay=gpio-ir,gpio_pin=18<br>
+              dtoverlay=gpio-ir-tx,gpio_pin=17
 			</div>
 		</div>
 		<div class="col-lg-12">
