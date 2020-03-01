@@ -14,8 +14,109 @@ title: AndyMOTE User Guide
           <h2 class="page-title">MQTT Support</h2>
           <p>MQTT allows AndyMOTE to publish it's current activity state to other systems (for example <a href="https://www.home-assistant.io">Home Assistant</a>). Andymote requires that the <a href="server.html">AndyMOTE Server</a> has a MQTT Broker such as <a href="https://mosquitto.org">Mosquitto</a> installed.</p>
 		  <p>With the <a href="server.html">AndyMOTE Server</a> properly configured, AndyMOTE will publish the current activity state to the the <a href="server.html">AndyMOTE Server</a> MQTT Broker. For example if AndyMOTE has an <a href="activities.html">Activity</a> called <i>Watch BluRay</i> and this is activated; AndyMOTE will publish status of <i><b>andymote = Watch BluRay</b></i> to the MQTT Broker. If no activities are running then the published status will be set to <i>Off</i>.
-         </div> 
-      </div>
+         </div>
+		<div class="col-lg-7">
+		  <h2 class="page-title" id="an">Application Note</h2>
+          <p>This application note describes the use of MQTT to switch on a Raspberry Pi when AndyMOTE publishes it's current activity as  <i><b>andymote = Watch Kodi</b></i> to the MQTT Broker.</p>
+		  <h3>Concept</h3>
+		  <ul id="bullets">
+            <li>AndyMOTE publishes status of <i><b>andymote = Watch BluRay</i></b></li>
+            <li>Python Script (running on AndyMOTE Server) detects this and triggers relay for 1 second</li>
+          </ul>
+        </div>
+	  </div>
+	  <div class="row">
+        <div class="col-lg-5">
+          <h3>Circuit Diagram</h3>
+          <p>The Circuit Diagram shows the hardware setup for this application. The AndyMOTE Server provides power to a Relay Module via a Micro USB to DIP Adapter and controls the operation of Relay 1 (on the Relay Module) through pin 36 (GPIO 16). Relay 2 is unused.</p>
+		  <p>The Relay 1, normally open (NO) contacts, are connected to Pins 5 & 6 of the Kodi Device (eg RaspberryPi 4). Pins 5 & 6 of a Raspberry Pi, when connected together, cause the device to switch on.</p>
+        </div>        
+        <div class="col-lg-7">
+          <p class="aligncenter"><img src="assets/images/cctApplicationNote.png" class="img-fluid img80" id="Circuit Diagram" alt=""></p>
+		  <p align="center">Circuit Diagram</p>
+        </div>
+	  </div>
+	  <div class="row">
+        <div class="col-lg-7">
+		  <h3>Python Script</h2>
+		  <div class="row spacer"></div>
+		  <h4>Requires</h4>
+		  <ul id="bullets">
+            <li>Python 3</li>
+            <li>paho-mqtt</li>
+			<li>Rpi.GPIO</li>
+          </ul>
+		  <div class="row-fluid" id="codeblock">
+			  #!/usr/bin/env python3<br>
+			  import time<br>
+			  import paho.mqtt.client as mqtt<br>
+			  import RPi.GPIO as GPIO<br>
+			  <br>
+			  Broker = "192.168.1.110"<br>
+			  <br>
+			  sub_topic = "andymote"&nbsp;&nbsp;&nbsp;&nbsp;# receive messages on this topic<br>
+			  <br>
+			  # when kodi needs switching on do this;<br>
+			  def on_kodi():<br>
+			  &nbsp;&nbsp;&nbsp;&nbsp;GPIO.setmode(GPIO.BCM)<br>
+			  &nbsp;&nbsp;&nbsp;&nbsp;GPIO.setwarnings(False)<br>
+			  &nbsp;&nbsp;&nbsp;&nbsp;GPIO.setup(16,GPIO.OUT)<br>
+			  &nbsp;&nbsp;&nbsp;&nbsp;print ("Relay on")<br>
+			  &nbsp;&nbsp;&nbsp;&nbsp;GPIO.output(16,GPIO.LOW)<br>
+			  &nbsp;&nbsp;&nbsp;&nbsp;time.sleep(1)<br>
+			  &nbsp;&nbsp;&nbsp;&nbsp;print ("Relay off")<br>
+			  &nbsp;&nbsp;&nbsp;&nbsp;GPIO.output(16,GPIO.HIGH)<br>
+			  <br>
+			  # when connecting to mqtt do this;<br>
+			  def on_connect(client, userdata, flags, rc):<br>
+			  &nbsp;&nbsp;&nbsp;&nbsp;print("Connected with result code "+str(rc))<br>
+			  &nbsp;&nbsp;&nbsp;&nbsp;client.subscribe(sub_topic)<br>
+			  <br>
+			  # when receiving a mqtt message do this;<br>
+			  def on_message(client, userdata, msg):<br>
+			  &nbsp;&nbsp;&nbsp;&nbsp;message = str(msg.payload)<br>
+			  &nbsp;&nbsp;&nbsp;&nbsp;print("AndyMote Status: "+message)<br>
+			  &nbsp;&nbsp;&nbsp;&nbsp;if (message == "b'Watch Kodi'"):<br>
+			  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;on_kodi()<br>
+			  <br>
+			  client = mqtt.Client()<br>
+			  client.on_connect = on_connect<br>
+			  client.on_message = on_message<br>
+			  client.connect(Broker, 1883, 60)<br>
+			  <br>
+			  try:<br>
+			  &nbsp;client.loop_forever()<br>
+			  &nbsp;except KeyboardInterrupt:<br>
+			  &nbsp;print("Keyboard Interrupt: Program Closed")<br>
+		  </div>
+		  <div class="row spacer"></div>
+		  <h3>Run as a Service</h3>
+		  <p>create the file /lib/systemd/system/mqttRelay.service with content as shown below:</p>
+		  <div class="row-fluid" id="codeblock">
+			  [Unit]<br>
+			  Description=run mqttRelay as a service<br>
+			  <br>
+			  [Service]<br>
+			  Type=simple<br>
+			  RemainAfterExit=false<br>
+			  Restart=always<br>
+			  RestartSec=30<br>
+			  ExecStop=/bin/true<br>
+			  ExecStart=/home/pi/relayProject/mqttRelay.py<br>
+			  <br>
+			  [Install]<br>
+			  WantedBy=multi-user.target<br>
+		  </div>
+		  <div class="row spacer "></div>
+		  <p>To enable the service:</p>
+		  <div class="row-fluid" id="codeblock">
+			  $ sudo systemctl unmask mqttRelay<br>
+			  $ sudo systemctl enable mqttRelay<br>
+			  $ sudo systemctl start mqttRelay<br>
+		  </div>
+		  <div class="row spacer2"></div>
+		</div>
+	   </div>
       {% include usergnav.html %}
     </div>
 
